@@ -38,7 +38,8 @@ async function getAdsConfig() {
       admob:    { ...DEFAULT_ADS.admob,    ...(data.admob    || {}) },
       facebook: { ...DEFAULT_ADS.facebook, ...(data.facebook || {}) },
     };
-  } catch {
+  } catch (e: any) {
+    console.error('[AdsPage] Firestore read failed:', e.message);
     return DEFAULT_ADS;
   }
 }
