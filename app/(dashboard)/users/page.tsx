@@ -2,6 +2,8 @@ import { adminDb } from '@/lib/firebase-admin';
 import Topbar from '@/components/Topbar';
 import UsersTable from '@/components/UsersTable';
 
+export const dynamic = 'force-dynamic';
+
 async function getUsers() {
   try {
     const snap = await adminDb

@@ -2,6 +2,8 @@ import { adminDb } from '@/lib/firebase-admin';
 import Topbar from '@/components/Topbar';
 import LeaderboardTable from '@/components/LeaderboardTable';
 
+export const dynamic = 'force-dynamic';
+
 async function getLeaderboard() {
   try {
     const snap = await adminDb

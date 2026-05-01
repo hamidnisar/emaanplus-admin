@@ -3,6 +3,8 @@ import Topbar from '@/components/Topbar';
 import BlogClient from '@/components/BlogClient';
 import { BlogPost } from '@/lib/types';
 
+export const dynamic = 'force-dynamic';
+
 async function getBlogPosts(): Promise<BlogPost[]> {
   try {
     const snap = await adminDb

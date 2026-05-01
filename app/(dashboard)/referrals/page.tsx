@@ -2,6 +2,8 @@ import { adminDb } from '@/lib/firebase-admin';
 import Topbar from '@/components/Topbar';
 import ReferralsClient from '@/components/ReferralsClient';
 
+export const dynamic = 'force-dynamic';
+
 async function getReferrals() {
   try {
     const snap = await adminDb

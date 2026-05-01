@@ -2,6 +2,8 @@ import { adminDb } from '@/lib/firebase-admin';
 import Topbar from '@/components/Topbar';
 import AdsClient from '@/components/AdsClient';
 
+export const dynamic = 'force-dynamic';
+
 const DEFAULT_ADS = {
   admob: {
     enabled:             false,

@@ -2,6 +2,8 @@ import { adminDb } from '@/lib/firebase-admin';
 import Topbar from '@/components/Topbar';
 import NotificationsClient from '@/components/NotificationsClient';
 
+export const dynamic = 'force-dynamic';
+
 async function getNotifications() {
   try {
     const snap = await adminDb

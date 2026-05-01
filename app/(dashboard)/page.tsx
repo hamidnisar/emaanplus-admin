@@ -4,6 +4,8 @@ import StatCards from '@/components/StatCards';
 import Link from 'next/link';
 import { unstable_cache } from 'next/cache';
 
+export const dynamic = 'force-dynamic';
+
 const getStats = unstable_cache(
   async () => {
     try {

@@ -3,6 +3,8 @@ import Topbar from '@/components/Topbar';
 import Link from 'next/link';
 import { unstable_cache } from 'next/cache';
 
+export const dynamic = 'force-dynamic';
+
 const getQuizzes = unstable_cache(
   async () => {
     try {
