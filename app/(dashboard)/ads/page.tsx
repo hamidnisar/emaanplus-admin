@@ -32,8 +32,12 @@ const DEFAULT_ADS = {
 async function getAdsConfig() {
   try {
     const doc = await adminDb.collection('settings').doc('ads').get();
-    if (!doc.exists) return DEFAULT_ADS;
+    if (!doc.exists) {
+      console.log('[AdsPage] settings/ads doc NOT found in Firestore');
+      return DEFAULT_ADS;
+    }
     const data = doc.data()!;
+    console.log('[AdsPage] loaded OK — admob.enabled:', data.admob?.enabled, '| fb.enabled:', data.facebook?.enabled);
     return {
       admob:    { ...DEFAULT_ADS.admob,    ...(data.admob    || {}) },
       facebook: { ...DEFAULT_ADS.facebook, ...(data.facebook || {}) },
