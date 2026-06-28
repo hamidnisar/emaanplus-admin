@@ -2,6 +2,7 @@ import { adminDb } from '@/lib/firebase-admin';
 import Topbar from '@/components/Topbar';
 import Link from 'next/link';
 import { unstable_cache } from 'next/cache';
+import CsvUpload from '@/components/CsvUpload';
 
 export const dynamic = 'force-dynamic';
 
@@ -49,9 +50,12 @@ export default async function QuizzesPage() {
         title="Quizzes"
         subtitle={`${quizzes.length} total quizzes`}
         action={
-          <Link href="/quizzes/new" className="btn btn-primary">
-            + Create quiz
-          </Link>
+          <>
+            <CsvUpload />
+            <Link href="/quizzes/new" className="btn btn-primary">
+              + Create quiz
+            </Link>
+          </>
         }
       />
       <div style={{ padding: '28px' }}>
